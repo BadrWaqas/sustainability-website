@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
   <style>
+    /* Custom styles for the page structure */
     body {
       background-color: #f8f9fa;
       min-height: 100vh;
@@ -19,16 +20,16 @@
       flex-direction: column;
     }
     main {
-      flex: 1;
+      flex: 1; /* Pushes footer to the bottom */
     }
     .form-box {
-      border-top: 5px solid #198754; /* Green top border matches theme */
+      border-top: 5px solid #198754; /* Green border to match the Sustainability theme */
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">Life on Land</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -118,54 +119,50 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    // 1. Select the form
     const form = document.getElementById('contactForm');
 
-    // 2. Listen for the submit click
     form.addEventListener('submit', function(e) {
       
-      // Prevent page reload to handle validation first
+      // 1. Stop the form from submitting/refreshing the page
       e.preventDefault();
 
-      // Clear previous error messages (DOM Manipulation)
+      // 2. Clear any old error messages (DOM Manipulation) [cite: 27]
       document.getElementById('nameError').innerText = "";
       document.getElementById('emailError').innerText = "";
       document.getElementById('messageError').innerText = "";
 
-      // Get values
+      // 3. Get the values from the input boxes
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const message = document.getElementById('message').value.trim();
       
       let isValid = true;
 
-      // VALIDATION RULES
-      
-      // Name cannot be empty
+      // 4. Validate Name: Cannot be empty
       if (name === "") {
         document.getElementById('nameError').innerText = "Please enter your full name.";
         isValid = false;
       }
 
-      // Email must have @ and .
+      // 5. Validate Email: Must look like an email (@ and .)
       if (!email.includes('@') || !email.includes('.')) {
         document.getElementById('emailError').innerText = "Please enter a valid email address.";
         isValid = false;
       }
 
-      // Message must be longer than 10 chars
+      // 6. Validate Message: Enforcing minimum length
       if (message.length < 10) {
         document.getElementById('messageError').innerText = "Message must be at least 10 characters long.";
         isValid = false;
       }
 
-      // If valid, show success
+      // 7. If everything is valid, show success
       if (isValid) {
         alert("Thanks " + name + "! Your message has been sent.");
-        form.reset(); // Reset form fields
+        form.reset(); // Clears the form fields
       }
     });
   </script>
 
 </body>
-</html>	
+</html>
