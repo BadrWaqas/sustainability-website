@@ -1,3 +1,89 @@
-body{font-family:Arial, sans-serif;margin:0;}header{background:#134e4a;color:#fff;padding:1rem;}
-nav a{color:white;margin-right:1rem;text-decoration:none;}nav a:hover{text-decoration:underline;}
-main{padding:1rem;}footer{background:#0f766e;color:#fff;text-align:center;padding:1rem;margin-top:2rem;}
+/* ============================================================
+   styles.css
+   Project: Life on Land
+   Contributor: Badr Ahmed (BA)
+   Purpose: single site stylesheet - layout, colours, responsive tweaks
+   Date: 2025-12-
+   ============================================================ */
+
+:root{
+  --brand-green: #0b6e4f;
+  --brand-dark:  #0a5d42;
+  --page-grey:   #f8f9fa;
+  --footer-bg:   #222428;
+  --muted:       #6c757d;
+}
+
+/* Basic reset and layout */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--page-grey);
+  color: #222;
+}
+
+/* Body column so footer can stick to bottom */
+body { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* NAVBAR */
+.site-nav {
+  background-color: var(--brand-green) !important;
+  border-bottom: 5px solid var(--brand-dark);
+}
+.site-nav .navbar-brand { font-weight: 600; color: #fff !important; }
+.site-nav .nav-link { color: rgba(255,255,255,0.95) !important; padding: .5rem .8rem; }
+.site-nav .nav-link:hover { color: #fff !important; text-decoration: none; }
+.site-nav .nav-link.active { color: #fff !important; background: rgba(0,0,0,0.06); border-radius: 6px; }
+
+/* PAGE HEADER */
+.page-header { background: transparent; padding-top: 2.4rem; padding-bottom: 1.2rem; }
+.page-header .display-5 { font-weight: 400; letter-spacing: .6px; color: #1e2223; }
+.page-header p.lead { max-width: 760px; margin: 0 auto; color: var(--muted); }
+
+/* MAIN CONTAINER WIDTH - stop cards from stretching too wide */
+.container { max-width: 1150px; }
+
+/* CARDS / GALLERY */
+.card { border: none; border-radius: 8px; overflow: hidden; transition: transform .18s ease, box-shadow .18s ease; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+
+/* Force consistent image height and nice cropping */
+.card-img-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  background-color: #e9ecef; /* visible while loading */
+}
+
+/* Card text */
+.card-body { padding: 1rem; }
+.card-title { margin: 0 0 .25rem 0; font-weight: 600; }
+.card-text { margin: 0; color: var(--muted); }
+
+/* FOOTER */
+.site-footer { background-color: var(--footer-bg); color: #fff; margin-top: auto; padding-top: .9rem; padding-bottom: .9rem; }
+.site-footer p { margin: 0; line-height: 1.6; }
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .card-img-top { height: 200px; }
+}
+@media (max-width: 576px) {
+  .card-img-top { height: 160px; }
+  .page-header { padding-top: 1.8rem; padding-bottom: 1rem; }
+}
+
+/* Accessibility helper (bootstrap has visually-hidden, fallback here) */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
