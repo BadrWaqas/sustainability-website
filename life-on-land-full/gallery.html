@@ -1,29 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Badr Ahmed">
-<title>Gallery - Life on Land</title>
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Badr Ahmed">
+  <title>Gallery - Life on Land</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+    }
+    /* Hover effect for the cards */
+    .gallery-item {
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+    }
+    .gallery-item img {
+      height: 250px;
+      object-fit: cover;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-<header>
-<h1>Gallery</h1>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="impact.html">Impact</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
-</nav>
-</header>
-<main>
-<section>
-<h2>Images and Infographics</h2>
-<p>A collection of visuals showing forests, wildlife, and conservation efforts.</p>
-</section>
-</main>
-<footer><p>&copy; 2025 Life on Land Project</p></footer>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Life on Land</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="impact.html">Impact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="text-center py-5">
+    <div class="container">
+      <h1 class="display-5 fw-bold text-success">Our Gallery</h1>
+      <p class="text-secondary lead">Visualizing the beauty and fragility of life on land.</p>
+    </div>
+  </header>
+
+  <main class="container mb-5">
+    <div class="row g-4">
+      
+      <div class="col-md-4">
+        <div class="card gallery-item shadow-sm border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Forest view">
+          <div class="card-body">
+            <h5 class="card-title text-success">Ancient Forests</h5>
+            <p class="card-text text-muted small">Preserving old-growth forests is essential for carbon storage.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card gallery-item shadow-sm border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Tree planting">
+          <div class="card-body">
+            <h5 class="card-title text-success">Reforestation</h5>
+            <p class="card-text text-muted small">Community efforts to replant native trees in damaged areas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card gallery-item shadow-sm border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Wildlife">
+          <div class="card-body">
+            <h5 class="card-title text-success">Biodiversity</h5>
+            <p class="card-text text-muted small">Protecting the diverse species that call these lands home.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card gallery-item shadow-sm border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Sunlight through trees">
+          <div class="card-body">
+            <h5 class="card-title text-success">Sustainable Growth</h5>
+            <p class="card-text text-muted small">Balancing human needs with nature's capacity to regenerate.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card gallery-item shadow-sm border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Plant sprout">
+          <div class="card-body">
+            <h5 class="card-title text-success">New Life</h5>
+            <p class="card-text text-muted small">Every small plant contributes to a healthier ecosystem.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card gallery-item shadow-sm border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Mountains">
+          <div class="card-body">
+            <h5 class="card-title text-success">Land Conservation</h5>
+            <p class="card-text text-muted small">Protecting our mountains and valleys for future generations.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="text-center py-4 bg-success text-white mt-auto">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Life on Land Project | Designed by Badr</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
